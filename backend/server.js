@@ -9,8 +9,22 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'http://localhost:5500',
+        'https://westeel-building.vercel.app',
+        'https://westeel-building-*.vercel.app',  // For preview deployments
+        '*'  // Temporarily allow all origins for testing
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 const corsOptions = {
     origin: [
