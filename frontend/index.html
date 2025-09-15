@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WeSteel Building">
-    <title>Westeel Buildings</title>
+    <meta name="description" content="TheBox - Building Excellence Since 1992. Professional Construction Services">
+    <title>Westeel Building</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader"></div>
+        <div class="spinner"></div>
     </div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="nav-wrapper">
-                <a href="#home" class="logo">
+            <div class="nav-content">
+                <div class="logo">
                     <i class="fas fa-cube"></i>
                     <span>TheBox</span>
-                </a>
+                </div>
                 
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About Us</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link contact-btn">Contact Us</a></li>
+                    <li><a href="#contact" class="nav-link btn-contact">Contact Us</a></li>
                 </ul>
                 
                 <div class="hamburger" id="hamburger">
@@ -52,26 +52,41 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-fade">
-                    Building <span class="text-gradient">Excellence</span>
+                <h1 class="hero-title">
+                    Building <span class="gradient-text">Excellence</span>
                 </h1>
-                <p class="hero-subtitle animate-fade">
-                    Professional construction services with 30+ years of experience
+                <p class="hero-subtitle">
+                    We provide professional construction services with over 30 years of experience
                 </p>
-                <div class="hero-buttons animate-fade">
+                <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToSection('contact')">
-                        Get Started
+                        Get Started <i class="fas fa-arrow-right"></i>
                     </button>
                     <button class="btn btn-outline">
                         <i class="fas fa-play"></i> Watch Video
                     </button>
                 </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="500">0</span>+
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="30">0</span>+
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="100">0</span>+
+                        <span class="stat-label">Awards</span>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-box animate-slide">
-                <span class="feature-label">FEATURED PROJECT</span>
+            <div class="feature-card">
+                <span class="feature-tag">FEATURED PROJECT</span>
                 <h3>National University of Architecture</h3>
-                <div class="feature-stats">
+                <div class="feature-details">
                     <div>
                         <span class="value">$5.2M</span>
                         <span class="label">Project Value</span>
@@ -81,10 +96,6 @@
                         <span class="label">Months</span>
                     </div>
                 </div>
-                <div class="feature-nav">
-                    <button onclick="previousProject()">←</button>
-                    <button onclick="nextProject()">→</button>
-                </div>
             </div>
         </div>
     </section>
@@ -93,21 +104,27 @@
     <section id="reputation" class="reputation">
         <div class="container">
             <h2 class="section-title">Our Reputation</h2>
-            <div class="reputation-grid">
-                <div class="rep-card">
-                    <i class="fas fa-handshake"></i>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
                     <h3>Trustworthy</h3>
-                    <p>Building lasting relationships based on trust and reliability.</p>
+                    <p>Building lasting relationships based on trust and reliability with every project.</p>
                 </div>
-                <div class="rep-card">
-                    <i class="fas fa-award"></i>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
                     <h3>Experienced</h3>
-                    <p>30+ years of expertise in construction industry.</p>
+                    <p>30+ years of expertise bringing knowledge to every construction challenge.</p>
                 </div>
-                <div class="rep-card">
-                    <i class="fas fa-shield-alt"></i>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <h3>Guarantee</h3>
-                    <p>On-time completion and satisfaction guaranteed.</p>
+                    <p>On-time completion and satisfaction guaranteed on every project we deliver.</p>
                 </div>
             </div>
         </div>
@@ -116,23 +133,23 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-wrapper">
+            <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600" alt="Construction">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800" alt="Construction">
                     <div class="experience-badge">
-                        <span class="years">30+</span>
-                        <span>Years</span>
+                        <span class="number">30+</span>
+                        <span class="text">Years</span>
                     </div>
                 </div>
                 <div class="about-content">
-                    <h2>About Us</h2>
-                    <p class="lead">We are an innovative construction company specializing in high-quality buildings.</p>
-                    <p>Since 1992, we have been serving clients nationwide, delivering exceptional construction solutions that meet the highest standards.</p>
-                    <div class="about-features">
-                        <div><i class="fas fa-check"></i> Licensed & Insured</div>
-                        <div><i class="fas fa-check"></i> Professional Team</div>
-                        <div><i class="fas fa-check"></i> Modern Equipment</div>
-                        <div><i class="fas fa-check"></i> Quality Guaranteed</div>
+                    <h2 class="section-title">About Us</h2>
+                    <p class="lead">We are an innovative construction company specializing in high-quality pre-engineered buildings.</p>
+                    <p>Since 1992, we have been serving clients nationwide, delivering exceptional construction solutions that meet the highest standards of quality and durability.</p>
+                    <div class="features">
+                        <div class="feature"><i class="fas fa-check"></i> Licensed & Insured</div>
+                        <div class="feature"><i class="fas fa-check"></i> Professional Team</div>
+                        <div class="feature"><i class="fas fa-check"></i> Modern Equipment</div>
+                        <div class="feature"><i class="fas fa-check"></i> Quality Guaranteed</div>
                     </div>
                     <button class="btn btn-primary">Learn More</button>
                 </div>
@@ -145,32 +162,32 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card blue">
                     <i class="fas fa-building"></i>
                     <h3>Construction</h3>
                     <p>Complete construction solutions from foundation to finish.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card white">
                     <i class="fas fa-tools"></i>
                     <h3>Renovation</h3>
                     <p>Transform existing spaces with modern upgrades.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card blue">
                     <i class="fas fa-comments"></i>
                     <h3>Consultation</h3>
                     <p>Expert advice for your construction projects.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card white">
                     <i class="fas fa-wrench"></i>
                     <h3>Repair Services</h3>
                     <p>Quick and reliable repair solutions.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card blue">
                     <i class="fas fa-drafting-compass"></i>
                     <h3>Architecture</h3>
                     <p>Innovative architectural design services.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card white">
                     <i class="fas fa-bolt"></i>
                     <h3>Electrical</h3>
                     <p>Complete electrical installation services.</p>
@@ -180,25 +197,34 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="123">0</span>
-                    <span>Projects Completed</span>
+                <div class="stat-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="number" data-target="123">0</span>
+                    <span class="label">Projects Completed</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="84">0</span>
-                    <span>Happy Clients</span>
+                <div class="stat-card">
+                    <i class="fas fa-smile"></i>
+                    <span class="number" data-target="84">0</span>
+                    <span class="label">Happy Clients</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="37">0</span>
-                    <span>Awards Won</span>
+                <div class="stat-card">
+                    <i class="fas fa-trophy"></i>
+                    <span class="number" data-target="37">0</span>
+                    <span class="label">Awards Won</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="30">0</span>
-                    <span>Years in Business</span>
+                <div class="stat-card">
+                    <i class="fas fa-calendar"></i>
+                    <span class="number" data-target="30">0</span>
+                    <span class="label">Years in Business</span>
                 </div>
+            </div>
+            <div class="stats-content">
+                <h2>30 Years Experience</h2>
+                <p>Our extensive experience in the construction industry has equipped us with the knowledge to handle projects of any scale.</p>
+                <button class="btn btn-primary">Contact Us</button>
             </div>
         </div>
     </section>
@@ -215,15 +241,15 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Our Projects</h2>
-            <div class="project-filters">
+            <h2 class="section-title">Projects</h2>
+            <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="commercial">Commercial</button>
                 <button class="filter-btn" data-filter="residential">Residential</button>
                 <button class="filter-btn" data-filter="other">Other</button>
             </div>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded dynamically -->
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Projects will be loaded here -->
             </div>
         </div>
     </section>
@@ -231,28 +257,30 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-wrapper">
+            <h2 class="section-title">What can we do for you?</h2>
+            <p class="section-subtitle">We are ready to work on a project of any complexity</p>
+            
+            <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Address</h4>
+                            <strong>Address</strong>
                             <p>6391 Elgin St. Celina, Delaware 10299</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Phone</h4>
+                            <strong>Phone</strong>
                             <p>+84 1102 2703</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <strong>Email</strong>
                             <p>hello@thebox.com</p>
                         </div>
                     </div>
@@ -260,36 +288,24 @@
                 
                 <form id="contactForm" class="contact-form">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label>Name *</label>
-                            <input type="text" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="email" required>
-                        </div>
+                        <input type="text" id="name" placeholder="Your Name *" required>
+                        <input type="email" id="email" placeholder="Email *" required>
                     </div>
                     <div class="form-row">
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label>Reason *</label>
-                            <select name="reason" required>
-                                <option value="">Select reason</option>
-                                <option value="quote">Get a Quote</option>
-                                <option value="consultation">Consultation</option>
-                                <option value="support">Support</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                        <input type="tel" id="phone" placeholder="Phone">
+                        <select id="reason" required>
+                            <option value="">Reason for Contacting *</option>
+                            <option value="quote">Get a Quote</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="support">Support</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <textarea id="message" placeholder="Message" rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -298,25 +314,23 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
-            <div class="newsletter-wrapper">
-                <div>
-                    <h3>Subscribe to Newsletter</h3>
-                    <p>Get updates on our latest projects</p>
-                </div>
-                <form id="newsletterForm" class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <div class="newsletter-content">
+                <h3>Subscribe to our Newsletter</h3>
+                <p>Get latest updates about our projects</p>
             </div>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
                         <i class="fas fa-cube"></i>
                         <span>TheBox</span>
                     </div>
@@ -328,7 +342,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -337,7 +351,7 @@
                         <li><a href="#projects">Projects</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="#">Construction</a></li>
@@ -346,8 +360,8 @@
                         <li><a href="#">Architecture</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Delaware 10299</li>
                         <li><i class="fas fa-phone"></i> +84 1102 2703</li>
@@ -361,6 +375,16 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Success Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <i class="fas fa-check-circle"></i>
+            <h3 id="modalTitle">Success!</h3>
+            <p id="modalMessage">Your message has been sent successfully.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
