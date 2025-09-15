@@ -4,15 +4,11 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const helmet = require('helmet');
-require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
 
+// Middleware
 app.use(cors({
     origin: [
         'http://localhost:3000',
@@ -26,20 +22,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-const corsOptions = {
-    origin: [
-        'http://localhost:3000',
-        'http://localhost:5000',
-        'https://westeel-building.vercel.app/',  // ← Add YOUR Vercel URL here
-        'https://*.vercel.app'  // Allow all Vercel preview URLs
-    ],
-    credentials: true,
-    optionsSuccessStatus: 200
-};
-
-// Middleware
 app.use(helmet());
-app.use(cors(corsOptions));
 app.use(cors({
     origin: process.env.CLIENT_URL || '*',
     credentials: true
