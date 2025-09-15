@@ -1,7 +1,7 @@
 // API Configuration - Update this after deployment
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:3000/api'
-    : 'https://your-app.vercel.app/api'; // Will update with actual URL
+    : 'https://westeel-building.vercel.app/api'; // Will update with actual URL
 
 // DOM Elements
 const preloader = document.getElementById('preloader');
