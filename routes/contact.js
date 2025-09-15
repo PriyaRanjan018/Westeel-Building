@@ -36,7 +36,7 @@ router.post('/', validateContact, async (req, res) => {
 
         // Send notification to admin using template
         await sendEmail({
-            to: process.env.ADMIN_EMAIL || 'hello@thebox.com',
+            to: process.env.ADMIN_EMAIL || 'westeel-building@zohomail.in',
             template: 'adminNotification',
             templateData: { name, email, reason, phone, message }
         });
