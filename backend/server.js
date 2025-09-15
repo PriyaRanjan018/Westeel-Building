@@ -7,24 +7,18 @@ require('dotenv').config();
 
 const app = express();
 
+// IMPORTANT: Trust proxy for Vercel deployment
+app.set('trust proxy', 1);  // ← ADD THIS LINE - Critical for Vercel!
+
 // MongoDB URI
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://westeelbuilding_db:C7DXyg5Y95c9i1Hi@westeelbuilding.jw946zw.mongodb.net/westeelbuilding_db?retryWrites=true&w=majority&appName=westeelbuilding";
-
-// Mongoose connection options
-const mongooseOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 10000, // Timeout after 10s
-    socketTimeoutMS: 45000, // Close sockets after 45s
-};
 
 // CORS configuration
 const corsOptions = {
     origin: function (origin, callback) {
         // Allow requests with no origin
         if (!origin) return callback(null, true);
-        
-        // Allow all origins for now (fix later for production)
+        // Allow all origins for now
         callback(null, true);
     },
     credentials: true,
@@ -32,30 +26,43 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-// Apply middleware
+// Apply middleware BEFORE rate limiting
 app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Rate limiting
+// Rate limiting - Fixed configuration for Vercel
 const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    standardHeaders: true, // Return rate limit info in headers
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+    // Skip rate limiting in development
+    skip: (req) => process.env.NODE_ENV === 'development',
+    // Use default key generator (fixed for proxies)
+    keyGenerator: (req) => {
+        return req.ip || req.connection.remoteAddress || 'unknown';
+    }
 });
+
+// Apply rate limiting to /api routes only
 app.use('/api/', limiter);
 
-// MongoDB Connection with detailed error handling
+// MongoDB Connection
 console.log('Attempting MongoDB connection...');
-mongoose.connect(MONGODB_URI, mongooseOptions)
-    .then(() => {
-        console.log('✅ MongoDB connected successfully');
-        console.log('Database:', mongoose.connection.name);
-    })
-    .catch(err => {
-        console.error('❌ MongoDB connection error:', err.message);
-        // Don't exit the process, let the API still work
-    });
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 10000,
+})
+.then(() => {
+    console.log('✅ MongoDB connected successfully');
+    console.log('Database:', mongoose.connection.name);
+})
+.catch(err => {
+    console.error('❌ MongoDB connection error:', err.message);
+});
 
 // Monitor connection events
 mongoose.connection.on('connected', () => {
@@ -70,7 +77,7 @@ mongoose.connection.on('disconnected', () => {
     console.log('Mongoose disconnected');
 });
 
-// Routes - Make sure these files exist!
+// Routes - with error handling
 try {
     app.use('/api/contact', require('./routes/contact'));
     app.use('/api/projects', require('./routes/projects'));
@@ -95,7 +102,8 @@ app.get('/api/health', async (req, res) => {
         database: states[dbState] || 'Unknown',
         databaseState: dbState,
         environment: process.env.NODE_ENV || 'development',
-        mongoUri: MONGODB_URI ? 'Set' : 'Not set'
+        mongoUri: MONGODB_URI ? 'Set' : 'Not set',
+        trustProxy: app.get('trust proxy') // Show trust proxy setting
     });
 });
 
