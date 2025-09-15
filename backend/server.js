@@ -16,7 +16,7 @@ const corsOptions = {
     origin: [
         'http://localhost:3000',
         'http://localhost:5000',
-        'https://thebox-construction.vercel.app',  // ← Add YOUR Vercel URL here
+        'https://westeel-building.vercel.app/',  // ← Add YOUR Vercel URL here
         'https://*.vercel.app'  // Allow all Vercel preview URLs
     ],
     credentials: true,
