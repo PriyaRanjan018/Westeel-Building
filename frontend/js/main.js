@@ -3,7 +3,7 @@
 // API Configuration
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:5000/api'
-    : 'https://your-backend-url.vercel.app/api';
+    : 'https://westeel-building.vercel.app/api';
 
 // DOM Elements
 const preloader = document.getElementById('preloader');

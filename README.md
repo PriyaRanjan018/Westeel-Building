@@ -90,3 +90,16 @@ MIT
 ## Contact
 
 TheBox Construction - hello@thebox.com
+
+
+
+# For future updates:
+git add .
+git commit -m "Your commit message"
+git push
+
+# MongoDB
+username = westeelbuilding_db
+password = 5btDEn1tAogkZem9
+
+const uri = "mongodb+srv://westeelbuilding_db:5btDEn1tAogkZem9@westeelbuilding.jw946zw.mongodb.net/?retryWrites=true&w=majority&appName=WesteelBuilding"
