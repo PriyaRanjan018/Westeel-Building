@@ -200,8 +200,8 @@ const sendEmail = async ({ to, subject, html, template, templateData }) => {
         const msg = {
             to: Array.isArray(to) ? to : [to], // SendGrid accepts array of recipients
             from: {
-                email: process.env.SENDGRID_VERIFIED_SENDER || 'noreply@thebox.com',
-                name: 'TheBox Construction'
+                email: process.env.SENDGRID_VERIFIED_SENDER || 'westeel-building@zohomail.in',
+                name: 'Westeel Building'
             },
             subject: emailContent.subject,
             html: emailContent.html,
@@ -281,8 +281,8 @@ const sendBatchEmails = async (recipients, subject, html) => {
             const msg = {
                 to: batch,
                 from: {
-                    email: process.env.SENDGRID_VERIFIED_SENDER || 'noreply@thebox.com',
-                    name: 'TheBox Construction'
+                    email: process.env.SENDGRID_VERIFIED_SENDER || 'westeel-building@zohomail.in',
+                    name: 'Westeel Building'
                 },
                 subject: subject,
                 html: html,
@@ -334,7 +334,7 @@ const validateEmailConfig = async () => {
         // Test API key by sending a test request
         const testMsg = {
             to: 'test@example.com',
-            from: process.env.SENDGRID_VERIFIED_SENDER || 'noreply@thebox.com',
+            from: process.env.SENDGRID_VERIFIED_SENDER || 'westeel-building@zohomail.in',
             subject: 'Test',
             text: 'Test',
             mailSettings: {
