@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WeSteel Building">
+    <title>Westeel Buildings</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>TheBox</span>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link contact-btn">Contact Us</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade">
+                    Building <span class="text-gradient">Excellence</span>
+                </h1>
+                <p class="hero-subtitle animate-fade">
+                    Professional construction services with 30+ years of experience
+                </p>
+                <div class="hero-buttons animate-fade">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                        Get Started
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-play"></i> Watch Video
+                    </button>
+                </div>
+            </div>
+            
+            <div class="feature-box animate-slide">
+                <span class="feature-label">FEATURED PROJECT</span>
+                <h3>National University of Architecture</h3>
+                <div class="feature-stats">
+                    <div>
+                        <span class="value">$5.2M</span>
+                        <span class="label">Project Value</span>
+                    </div>
+                    <div>
+                        <span class="value">18</span>
+                        <span class="label">Months</span>
+                    </div>
+                </div>
+                <div class="feature-nav">
+                    <button onclick="previousProject()">←</button>
+                    <button onclick="nextProject()">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reputation Section -->
+    <section id="reputation" class="reputation">
+        <div class="container">
+            <h2 class="section-title">Our Reputation</h2>
+            <div class="reputation-grid">
+                <div class="rep-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Trustworthy</h3>
+                    <p>Building lasting relationships based on trust and reliability.</p>
+                </div>
+                <div class="rep-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Experienced</h3>
+                    <p>30+ years of expertise in construction industry.</p>
+                </div>
+                <div class="rep-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Guarantee</h3>
+                    <p>On-time completion and satisfaction guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600" alt="Construction">
+                    <div class="experience-badge">
+                        <span class="years">30+</span>
+                        <span>Years</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p class="lead">We are an innovative construction company specializing in high-quality buildings.</p>
+                    <p>Since 1992, we have been serving clients nationwide, delivering exceptional construction solutions that meet the highest standards.</p>
+                    <div class="about-features">
+                        <div><i class="fas fa-check"></i> Licensed & Insured</div>
+                        <div><i class="fas fa-check"></i> Professional Team</div>
+                        <div><i class="fas fa-check"></i> Modern Equipment</div>
+                        <div><i class="fas fa-check"></i> Quality Guaranteed</div>
+                    </div>
+                    <button class="btn btn-primary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Construction</h3>
+                    <p>Complete construction solutions from foundation to finish.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Renovation</h3>
+                    <p>Transform existing spaces with modern upgrades.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Consultation</h3>
+                    <p>Expert advice for your construction projects.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Repair Services</h3>
+                    <p>Quick and reliable repair solutions.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Architecture</h3>
+                    <p>Innovative architectural design services.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electrical</h3>
+                    <p>Complete electrical installation services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="123">0</span>
+                    <span>Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="84">0</span>
+                    <span>Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="37">0</span>
+                    <span>Awards Won</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="30">0</span>
+                    <span>Years in Business</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Free consultation with exceptional quality</h2>
+            <p>Just one call away: <a href="tel:+8411022703">+84 1102 2703</a></p>
+            <button class="btn btn-white">Get Your Consultation</button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>6391 Elgin St. Celina, Delaware 10299</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+84 1102 2703</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@thebox.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Reason *</label>
+                            <select name="reason" required>
+                                <option value="">Select reason</option>
+                                <option value="quote">Get a Quote</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="support">Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div>
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Get updates on our latest projects</p>
+                </div>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>TheBox</span>
+                    </div>
+                    <p>Building excellence since 1992</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Renovation</a></li>
+                        <li><a href="#">Consultation</a></li>
+                        <li><a href="#">Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Delaware 10299</li>
+                        <li><i class="fas fa-phone"></i> +84 1102 2703</li>
+                        <li><i class="fas fa-envelope"></i> hello@thebox.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheBox Company. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
